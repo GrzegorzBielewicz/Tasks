@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+{% block title %}
+Register
+{% endblock title %}
+{% block body_content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p>{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+
+    <section>
+            <div class="form-box">
+                <div class="form-value">
+                    <form method='POST' action="">
+                        <h2>Register</h2>
+                            <div class="inputbox">
+                                <ion-icon name="mail-outline"></ion-icon>
+                                <input type="email" required name="Email">
+                                <label for="">Email</label>
+                            </div>
+                            <div class="inputbox">
+                                <ion-icon name="lock-closed-outline"></ion-icon>
+                                <input type="password" required name="Password">
+                                <label for="">Password</label>
+                            </div>
+                            <div class="inputbox">
+                                <ion-icon name="lock-closed-outline"></ion-icon>
+                                <input type="password" required name="Password2">
+                                <label for="">Confirm Password</label>
+                            </div>
+                            <button>create a new account</button>
+                    </form>
+                </div>
+            </div>
+    </section>
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+
+{% block title %}
+Add
+{% endblock title %}
+
+{% block body_content %}
+
+    <div class="container">
+        <section>
+            <form method="post">
+                <h2>Add a new goal</h2>
+                    <div class="inputbox">
+                        <input type="text" name="addTitle" required placeholder="Enter the title of your new task here">
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" name="addTask" required placeholder="What is your task ?">
+                    </div>
+                        <button>Add</button>
+            </form>
+        </section>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+{% block title %}
+Login
+{% endblock title %}
+{% block body_content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p>{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <div class="container">
+        <section>
+            <div class="form-box">
+                <div class="form-value">
+                    <form method="POST" action="{{url_for('login')}}">
+                        <h2>Login</h2>
+                            <div class="inputbox">
+                                <ion-icon name="mail-outline"></ion-icon>
+                                <input type="email" name="Email" required id="email">
+                                <label for="">Email</label>
+                            </div>
+                            <div class="inputbox">
+                                <ion-icon name="lock-closed-outline"></ion-icon>
+                                <input type="password" name="Password" required id="password">
+                                <label for="">Password</label>
+                            </div>
+                            <div class="forget">
+                                <label for=""><a href="#">Forget Password</a></label>
+                            </div>
+                            <button>Log in</button>
+                            <div class="register">
+                                <p>create a new account <a href="{{url_for('register')}}">Register</a></p>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+{% endblock %}

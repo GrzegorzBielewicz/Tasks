@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+
+{% block title %}
+Update
+{% endblock title %}
+
+{% block body_content %}
+
+<div class="container">
+        <section>
+                <form method="post" action="{{url_for('update', PersonID=PersonID, Title=Title, Task=Task, Task_ID=Task_ID)}}">
+                    <h2>Update yours goals</h2>
+                        <div class="inputbox">
+                            <input type="text" name="Title" required placeholder="{{Title}}">
+                        </div>
+                        <div class="inputbox">
+                            <input type="text" name="Task" required placeholder="{{Task}}">
+                        </div>
+                    <button>Update</button>
+                </form>
+        </section>
+</div>
+
+{% endblock %}
